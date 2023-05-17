@@ -163,8 +163,8 @@ func (app *application) bookCreateProcess(w http.ResponseWriter, r *http.Request
 		return
 	}
 
-	req, err := http.NewRequest("POST", app.readinglist.Endpoint, bytes.NewBuffer(data))
-	if err != nil {
+	req, err := http.NewRequest("POST", app.readinglist.Endpoint, bytes.NewBuffer(data)) //endpointnya bisa diubah
+	if err != nil {                                                                      //kenapa harus lewat API?? kalau langsung bisa ga??
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 		return
 	}
